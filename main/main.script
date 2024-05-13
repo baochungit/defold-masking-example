@@ -1,0 +1,4 @@
+function init(self)
+	go.set("go#mask", "mask_position.x", -1)
+	go.animate("go#mask", "mask_position.x", go.PLAYBACK_LOOP_FORWARD, 1, go.EASING_LINEAR, 5)
+end
