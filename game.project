@@ -12,5 +12,5 @@ height = 640
 input_method = HiddenInputField
 
 [project]
-title = Balatro Card Burn effect
+title = Defold Masking Example
 
