@@ -1,5 +1,6 @@
 [bootstrap]
 main_collection = /main/main.collectionc
+render = /render/main.renderc
 
 [script]
 shared_state = 1
@@ -13,4 +14,6 @@ input_method = HiddenInputField
 
 [project]
 title = Defold Masking Example
+custom_resources = /assets/mask
+dependencies#0 = https://github.com/Lerg/extension-imageloader/archive/master.zip
 

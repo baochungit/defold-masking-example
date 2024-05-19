@@ -1,0 +1,18 @@
+function init(self)
+	local data = sys.load_resource("/assets/mask/logo-text-bg.png")
+	-- local img = image.load(data)
+	-- gui.new_texture("mask_texture", img.width, img.height, img.type, img.buffer)
+
+	local img_resource = imageloader.load({ data = data })
+	local my_texture_id = resource.create_texture("/logo_mask.texturec", img_resource.header, img_resource.buffer)
+	local texture_info = resource.get_texture_info("/logo_mask.texturec")
+
+	msg.post("@render:", "set_mask_texture", { texture = texture_info.handle })
+	self.mask_postion = vmath.vector4(-1, 0, 0, 0)
+end
+
+function update(self, dt)
+	self.mask_postion.x = self.mask_postion.x + 0.5 * dt
+	if self.mask_postion.x >= 1 then self.mask_postion.x = -1 end
+	msg.post("@render:", "set_mask_position", { position = self.mask_postion })
+end
